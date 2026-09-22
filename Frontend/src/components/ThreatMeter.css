@@ -1,0 +1,92 @@
+.threat-meter {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  background: rgba(10, 14, 22, 0.6);
+}
+
+.threat-meter-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.threat-meter-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-clear);
+  box-shadow: 0 0 8px var(--accent-clear);
+}
+
+.threat-meter-clear .threat-meter-dot {
+  background: var(--accent-clear);
+  box-shadow: 0 0 8px var(--accent-clear);
+}
+
+.threat-meter-caution .threat-meter-dot {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.threat-meter-alert .threat-meter-dot {
+  background: var(--accent-alert);
+  box-shadow: 0 0 8px var(--accent-alert);
+}
+
+.threat-meter-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.threat-meter-row {
+  display: grid;
+  grid-template-columns: 34px 1fr 20px;
+  align-items: center;
+  gap: 8px;
+}
+
+.threat-meter-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+}
+
+.threat-meter-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.threat-meter-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.threat-meter-fill-high {
+  background: var(--accent-alert);
+}
+
+.threat-meter-fill-medium {
+  background: var(--accent);
+}
+
+.threat-meter-fill-low {
+  background: var(--accent-clear);
+}
+
+.threat-meter-count {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-align: right;
+}

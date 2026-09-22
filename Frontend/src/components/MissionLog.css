@@ -1,0 +1,122 @@
+.mission-log {
+  position: fixed;
+  top: 0;
+  right: -340px;
+  width: 320px;
+  height: 100%;
+  background: #0a0e16;
+  border-left: 1px solid var(--line);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.3s ease;
+  box-shadow: -20px 0 40px rgba(0, 0, 0, 0.5);
+}
+
+.mission-log-open {
+  right: 0;
+}
+
+.mission-log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  font-family: "JetBrains Mono", monospace;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.mission-log-close {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.mission-log-close:hover {
+  color: var(--accent);
+}
+
+.mission-log-empty {
+  padding: 20px 18px;
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.mission-log-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.mission-log-entry {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  color: var(--text);
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.mission-log-entry:hover {
+  border-color: var(--accent);
+  background: rgba(255, 176, 0, 0.06);
+}
+
+.mission-log-lang {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.mission-log-preview {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+.mission-log-time {
+  font-size: 0.7rem;
+  color: #5a6474;
+}
+
+.mission-log-clear {
+  margin: 12px;
+  padding: 10px;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.mission-log-clear:hover {
+  border-color: var(--accent-alert);
+  color: var(--accent-alert);
+}
+
+@media (max-width: 768px) {
+  .mission-log {
+    width: 100%;
+    right: -100%;
+  }
+}

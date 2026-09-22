@@ -1,0 +1,222 @@
+.teaching-section {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.teaching-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.teaching-header h3 {
+  color: var(--accent-2);
+  margin: 0;
+  font-family: var(--font-display);
+}
+
+.teaching-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.mode-tab {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.mode-tab:hover {
+  border-color: var(--accent-2);
+}
+
+.mode-tab.active {
+  background: var(--accent-2);
+  border-color: transparent;
+  color: #05070c;
+  font-weight: 600;
+}
+
+.language-select {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.teaching-status {
+  color: var(--text-dim);
+  font-style: italic;
+  margin: 10px 0;
+}
+
+.teaching-error {
+  color: var(--accent-alert);
+  font-style: normal;
+}
+
+.finding-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.finding-title {
+  margin-bottom: 6px;
+}
+
+.finding-badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: rgba(255, 69, 69, 0.15);
+  color: var(--accent-alert);
+}
+
+.finding-badge-medium {
+  background: rgba(255, 176, 0, 0.15);
+  color: var(--accent);
+}
+
+.finding-badge-low {
+  background: rgba(45, 212, 191, 0.15);
+  color: var(--accent-2);
+}
+
+.finding-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.finding-card h4 {
+  color: var(--accent-2);
+  margin: 10px 0 4px;
+  font-size: 0.9rem;
+  font-family: var(--font-display);
+}
+
+.finding-technical {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+.finding-humanized {
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.finding-humanized pre {
+  background: var(--panel-2);
+  padding: 12px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+.listen-box {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed var(--line);
+}
+
+.listen-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.listen-btn {
+  background: var(--accent-2);
+  color: #05070c;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: 0.2s;
+}
+
+.listen-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.5);
+}
+
+.listen-btn-play {
+  background: var(--accent-clear);
+}
+
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.listen-progress-track {
+  margin-top: 10px;
+  height: 6px;
+  width: 100%;
+  background: var(--panel-2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.listen-progress-fill {
+  height: 100%;
+  background: var(--accent-2);
+  transition: width 0.2s linear;
+}
+
+.tts-unsupported {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .teaching-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .language-select {
+    width: 100%;
+  }
+
+  .listen-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .listen-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

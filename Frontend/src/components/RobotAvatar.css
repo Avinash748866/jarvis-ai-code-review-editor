@@ -1,0 +1,25 @@
+.robot-avatar {
+  width: 100%;
+  height: 100%;
+}
+
+.robot-avatar canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Shown only when WebGL isn't available. */
+.robot-avatar-fallback {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+  font-size: 1.6rem;
+}
+.robot-avatar-thinking,
+.robot-avatar-listening,
+.robot-avatar-speaking { border-color: var(--accent-2); box-shadow: 0 0 14px var(--accent-2); }
+.robot-avatar-success { border-color: var(--accent-clear); box-shadow: 0 0 14px var(--accent-clear); }
+.robot-avatar-alert { border-color: var(--accent-alert); box-shadow: 0 0 14px var(--accent-alert); }

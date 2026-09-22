@@ -1,0 +1,313 @@
+.neural-coach {
+  position: relative;
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 16px 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(45, 212, 191, 0.08), transparent 55%),
+    linear-gradient(180deg, rgba(13, 19, 32, 0.9), rgba(5, 7, 12, 0.94));
+  overflow-y: auto;
+  font-family: var(--font-mono);
+}
+
+.neural-coach-scanline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(45, 212, 191, 0.035) 0px,
+    rgba(45, 212, 191, 0.035) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: screen;
+}
+
+.neural-coach-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.neural-coach-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  color: var(--accent-2);
+  text-shadow: 0 0 10px rgba(45, 212, 191, 0.55);
+}
+
+.neural-coach-level {
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  border-radius: 12px;
+  border: 1px solid var(--accent-2);
+  color: var(--accent-2);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.35) inset;
+}
+
+.neural-coach-share-btn {
+  width: 100%;
+  padding: 7px 8px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  color: var(--accent-2);
+  background: rgba(45, 212, 191, 0.06);
+  border: 1px dashed var(--accent-2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.neural-coach-share-btn:hover {
+  background: rgba(45, 212, 191, 0.16);
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.3);
+}
+
+.neural-coach-xp-track {
+  height: 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.neural-coach-xp-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-2), var(--accent-clear));
+  box-shadow: 0 0 8px var(--accent-2);
+  transition: width 0.5s ease;
+}
+
+.neural-coach-xp-caption {
+  margin-top: -8px;
+  font-size: 0.68rem;
+  color: var(--text-dim);
+}
+
+.neural-coach-streak {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.neural-coach-flame {
+  filter: grayscale(1) opacity(0.5);
+  font-size: 1rem;
+}
+
+.neural-coach-flame-lit {
+  filter: none;
+  animation: neural-flame-flicker 1.6s ease-in-out infinite;
+}
+
+@keyframes neural-flame-flicker {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+.neural-coach-topics h4,
+.neural-coach-badges h4,
+.neural-coach-hints h4 {
+  margin: 0 0 8px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.neural-coach-topic-row {
+  display: grid;
+  grid-template-columns: 72px 1fr 34px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.neural-coach-topic-label {
+  font-size: 0.68rem;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.neural-coach-topic-track {
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.neural-coach-topic-fill {
+  height: 100%;
+  background: var(--accent-clear);
+  box-shadow: 0 0 6px var(--accent-clear);
+  transition: width 0.5s ease;
+}
+
+.neural-coach-topic-fill-weak {
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.neural-coach-topic-count {
+  font-size: 0.65rem;
+  color: var(--text-dim);
+  text-align: right;
+}
+
+.neural-coach-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.neural-coach-badge {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+.neural-coach-badge-unlocked {
+  border-color: var(--accent-2);
+  box-shadow: 0 0 8px rgba(45, 212, 191, 0.35);
+  background: rgba(45, 212, 191, 0.08);
+}
+
+.neural-coach-badge-locked {
+  filter: grayscale(1) opacity(0.35);
+}
+
+.neural-coach-hint-ladder {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.neural-coach-hint-pip {
+  flex: 1;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.neural-coach-hint-pip-lit {
+  background: var(--accent);
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.neural-coach-hint-btn {
+  width: 100%;
+  padding: 8px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  background: rgba(255, 176, 0, 0.08);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.neural-coach-hint-btn:hover:not(:disabled) {
+  background: rgba(255, 176, 0, 0.18);
+  box-shadow: 0 0 10px rgba(255, 176, 0, 0.35);
+}
+
+.neural-coach-hint-btn:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.neural-coach-hint-error {
+  color: var(--accent-alert);
+  font-size: 0.72rem;
+  margin: 8px 0 0;
+}
+
+.neural-coach-hint-text {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: 4px;
+  background: rgba(255, 176, 0, 0.04);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: var(--text);
+  animation: neural-hint-in 0.35s ease;
+}
+
+@keyframes neural-hint-in {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.neural-coach-hint-empty {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.neural-coach-toast {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-2);
+  background: rgba(10, 14, 22, 0.97);
+  box-shadow: 0 0 18px rgba(45, 212, 191, 0.4);
+  animation: neural-toast-in 0.3s ease, neural-toast-out 0.4s ease 3.8s forwards;
+}
+
+.neural-coach-toast-icon {
+  font-size: 1.4rem;
+}
+
+.neural-coach-toast-title {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+  text-transform: uppercase;
+}
+
+.neural-coach-toast-label {
+  font-size: 0.85rem;
+  color: var(--text);
+  font-family: var(--font-display);
+}
+
+@keyframes neural-toast-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes neural-toast-out {
+  to { opacity: 0; transform: translateY(10px); }
+}
+
+@media (max-width: 1080px) {
+  .neural-coach {
+    display: none; /* keeps small screens focused on the editor - the FAB/JARVIS still carries the hint ladder's AI call */
+  }
+}
